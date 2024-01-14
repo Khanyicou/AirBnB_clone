@@ -2,9 +2,9 @@
 """Defines unittests for models/user.py.
 
 Unittest classes:
-    TestUserInstantiation
-    TestUserSave
-    TestUserToDict
+    TestUser_instantiation
+    TestUser_save
+    TestUser_to_dict
 """
 import os
 import models
@@ -14,7 +14,7 @@ from time import sleep
 from models.user import User
 
 
-class TestUserInstantiation(unittest.TestCase):
+class TestUser_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the User class."""
 
     def test_no_args_instantiates(self):
@@ -67,11 +67,11 @@ class TestUserInstantiation(unittest.TestCase):
         us = User()
         us.id = "123456"
         us.created_at = us.updated_at = dt
-        us_str = us.__str__()
-        self.assertIn("[User] (123456)", us_str)
-        self.assertIn("'id': '123456'", us_str)
-        self.assertIn("'created_at': " + dt_repr, us_str)
-        self.assertIn("'updated_at': " + dt_repr, us_str)
+        usstr = us.__str__()
+        self.assertIn("[User] (123456)", usstr)
+        self.assertIn("'id': '123456'", usstr)
+        self.assertIn("'created_at': " + dt_repr, usstr)
+        self.assertIn("'updated_at': " + dt_repr, usstr)
 
     def test_args_unused(self):
         us = User(None)
@@ -90,8 +90,8 @@ class TestUserInstantiation(unittest.TestCase):
             User(id=None, created_at=None, updated_at=None)
 
 
-class TestUserSave(unittest.TestCase):
-    """Unittests for testing save method of the User class."""
+class TestUser_save(unittest.TestCase):
+    """Unittests for testing save method of the  class."""
 
     @classmethod
     def setUp(self):
@@ -141,7 +141,7 @@ class TestUserSave(unittest.TestCase):
             self.assertIn(usid, f.read())
 
 
-class TestUserToDict(unittest.TestCase):
+class TestUser_to_dict(unittest.TestCase):
     """Unittests for testing to_dict method of the User class."""
 
     def test_to_dict_type(self):
@@ -193,4 +193,3 @@ class TestUserToDict(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

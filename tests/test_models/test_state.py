@@ -175,14 +175,14 @@ class TestState_to_dict(unittest.TestCase):
         }
         self.assertDictEqual(st.to_dict(), tdict)
 
+    def test_contrast_to_dict_dunder_dict(self):
+        st = State()
+        self.assertNotEqual(st.to_dict(), st.__dict__)
+
     def test_to_dict_with_arg(self):
         st = State()
         with self.assertRaises(TypeError):
             st.to_dict(None)
-
-def test_contrast_to_dict_dunder_dict(self):
-st = State()
-self.assertNotEqual(st.to_dict(), st.__dict__)        
 
 
 if __name__ == "__main__":
