@@ -2,9 +2,9 @@
 """Defines unittests for models/base_model.py.
 
 Unittest classes:
-    TestBaseModelInstantiation
-    TestBaseModelSave
-    TestBaseModelToDict
+    TestBaseModel_instantiation
+    TestBaseModel_save
+    TestBaseModel_to_dict
 """
 import os
 import models
@@ -14,7 +14,7 @@ from time import sleep
 from models.base_model import BaseModel
 
 
-class TestBaseModelInstantiation(unittest.TestCase):
+class TestBaseModel_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the BaseModel class."""
 
     def test_no_args_instantiates(self):
@@ -86,7 +86,7 @@ class TestBaseModelInstantiation(unittest.TestCase):
         self.assertEqual(bm.updated_at, dt)
 
 
-class TestBaseModelSave(unittest.TestCase):
+class TestBaseModel_save(unittest.TestCase):
     """Unittests for testing save method of the BaseModel class."""
 
     @classmethod
@@ -138,7 +138,7 @@ class TestBaseModelSave(unittest.TestCase):
             self.assertIn(bmid, f.read())
 
 
-class TestBaseModelToDict(unittest.TestCase):
+class TestBaseModel_to_dict(unittest.TestCase):
     """Unittests for testing to_dict method of the BaseModel class."""
 
     def test_to_dict_type(self):
@@ -190,4 +190,3 @@ class TestBaseModelToDict(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Defines the BaseModel class."""
 import models
-from datetime import datetime
 from uuid import uuid4
+from datetime import datetime
 
 
 class BaseModel:
@@ -40,8 +40,8 @@ class BaseModel:
         the class name of the object.
         """
         rdict = self.__dict__.copy()
+        rdict["created_at"] = self.created_at.isoformat()
         rdict["updated_at"] = self.updated_at.isoformat()
-         rdict["created_at"] = self.created_at.isoformat()
         rdict["__class__"] = self.__class__.__name__
         return rdict
 
