@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Defines the FileStorage class."""
-@authors: Khanyicou
+
 import json
 from models.city import City
 from models.place import Place
